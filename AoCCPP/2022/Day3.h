@@ -11,4 +11,7 @@ public:
 
 private:
     std::vector<std::string> vec;
+    std::vector<char> CheckForMatches(std::string s1, std::string s2);
+    std::vector<char> CheckForMatches(std::string s1, std::string s2, std::string s3);
+    int returnSum(std::vector<char> props);
 };
