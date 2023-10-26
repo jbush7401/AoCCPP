@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 
+
 std::vector<std::string> GetVectorFromTxt(std::string path)
 {
     std::string line;
@@ -16,6 +17,6 @@ std::vector<std::string> GetVectorFromTxt(std::string path)
         }
         myfile.close();
     }
-        else std::cout << "Unable to open file";
+    else std::cout << "Unable to open file";
     return vec;
 }

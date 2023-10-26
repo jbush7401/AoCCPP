@@ -5,7 +5,7 @@
 
 
 void Day1_2022::PartOne() {
-    vec = GetVectorFromTxt("2022/Input/day1.txt");
+    vec = GetVectorFromTxt("2022/Input/Day1.txt");
     int totCalCurrent = 0;
     for(std::string s : vec){
         if (s == ""){
