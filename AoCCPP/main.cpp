@@ -24,7 +24,7 @@ int main() {
 
         auto start2 = std::chrono::high_resolution_clock::now();
         instance->PartTwo();
-        auto elapsed2 = std::chrono::high_resolution_clock::now() - start;
+        auto elapsed2 = std::chrono::high_resolution_clock::now() - start2;
         long long ms2 = std::chrono::duration_cast<std::chrono::milliseconds>(
             elapsed2).count();
         std::cout << "Part 2 Time: " << ms2 << std::endl;
