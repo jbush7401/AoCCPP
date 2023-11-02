@@ -5,8 +5,8 @@
 
 class Day4_2022 : public IDay {
 public:
-    void PartOne(); // declaration of PartOne function
-    void PartTwo(); // declaration of PartTwo function
+    void PartOne(); 
+    void PartTwo(); 
 
 private:
     struct Digit {
