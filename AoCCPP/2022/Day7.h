@@ -21,9 +21,12 @@ private:
         ~Folder(){}
 
         std::string name = "";
+        long totalSize = 0;
         std::vector<File> files;
         std::vector<Folder> folders;
         Folder* previousFolder;
+
+        void SetSize(int s);
     };
 
     Folder* currentFolder = nullptr;

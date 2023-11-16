@@ -37,16 +37,31 @@ void Day7_2022::ProcessCommand(int& i)
 			}
 			i++;
 		}
+		//Set total size of direcctory
+		long tSize = 0;
+		for (File f : currentFolder->files) {
+			tSize += f.size;
+		}
+		currentFolder->SetSize(tSize);
 	}
 	else {
-		for (Folder f : currentFolder->folders) {
-			if (vec[i] == "$ cd ..") {
+		if (vec[i] == "$ cd ..") {
+			currentFolder = currentFolder->previousFolder;
+		}
+		else {
+			for (Folder f : currentFolder->folders) {
+
+				if (f.name == vec[i].substr(vec[i].find_first_of('d') + 2))
+					currentFolder = &f;
 			}
-			if (f.name == vec[i].substr(vec[i].find_first_of('d') + 2))
-				currentFolder = &f;
 		}
 		i++;
 	}
 }
 
-
+void Day7_2022::Folder::SetSize(int s)
+{
+	totalSize += s;
+	if (previousFolder != nullptr)
+		previousFolder->totalSize += s;
+}
