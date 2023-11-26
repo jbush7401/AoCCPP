@@ -16,28 +16,15 @@ private:
         int y;
     };
 
-    class Head {
-    public:
-        Pos pos;
-        Head(Pos p = Pos()) : pos(p) {};
-    };
-
-    class Tail {
-    public:
-        Pos pos;
-        Tail(Pos p = Pos()) : pos(p) {};
-        std::vector<Pos> visited;
-    };
-
     class Snake {
     public:
-        Pos array[9];
+        std::vector<Pos> body;
         std::vector<Pos> visited;
     };
 
-    Head head = Head();
-    Tail tail = Tail();
+    Snake snake = Snake();
 
-    void CheckPositions();
+    void MoveSnakePart(char dir, int howMany);
+    void CheckPositions(int posFront, int posBack);
     void CheckTail();
 };
