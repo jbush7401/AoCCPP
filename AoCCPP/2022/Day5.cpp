@@ -20,9 +20,9 @@ void Day5_2022::PartOne()
 	stacksOriginal = stacks;
 	// Process Move Commands
 	for (int i = LastStackRow + 3; i < vec.size(); i++) {
-		int fpos = vec[i].find_first_of('e');
-		int spos = vec[i].find_first_of('f');
-		int howMany = stoi(vec[i].substr(fpos + 2, spos - fpos - 3));
+		size_t fpos = vec[i].find_first_of('e');
+		size_t spos = vec[i].find_first_of('f');
+		size_t howMany = stoi(vec[i].substr(fpos + 2, spos - fpos - 3));
 		fpos = vec[i].find("from");
 		spos = vec[i].find_first_of('t');
 		int from = stoi(vec[i].substr(fpos + 5, spos - fpos - 6));
@@ -31,7 +31,7 @@ void Day5_2022::PartOne()
 		commands.push_back(Command(howMany, from, to));
 	}
 
-	for (Command c : commands) {
+	for (Command& c : commands) {
 		for (int i = 0; i < c.howMany; i++) {
 			char box = stacks[c.from - 1].top();
 			stacks[c.from - 1].pop();
@@ -44,7 +44,7 @@ void Day5_2022::PartOne()
 
 void Day5_2022::PartTwo()
 {
-	for (Command c : commands) {
+	for (Command& c : commands) {
 		std::stack<char> tempStack;
 
 		for (int i = 0; i < c.howMany; i++) {

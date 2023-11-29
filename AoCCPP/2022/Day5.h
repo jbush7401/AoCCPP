@@ -11,8 +11,8 @@ public:
 
 private:
     struct Command {
-        int howMany, from, to;
-        Command(int hm, int f, int t) : howMany(hm), from(f), to(t) {};
+        size_t howMany, from, to;
+        Command(size_t hm, int f, int t) : howMany(hm), from(f), to(t) {};
     };
     std::vector<std::string> vec;
     std::vector<std::stack<char>> stacks;
