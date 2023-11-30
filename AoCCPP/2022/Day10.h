@@ -16,8 +16,8 @@ protected:
         addx
     };
     struct Command {
-        Command(int cs = 0, CommandType ct = none, int cv = 0) : cycleStarted(cs), commandType(ct), commandValue(cv) {};
-        int cycleStarted;
+        Command(int cet = 0, CommandType ct = none, int cv = 0) : cycleEndTime(cet), commandType(ct), commandValue(cv) {};
+        int cycleEndTime = 0;
         CommandType commandType;
         int commandValue = 0;
     };
