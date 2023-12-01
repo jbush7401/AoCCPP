@@ -9,6 +9,7 @@
 #include "../2022/Day8.h"
 #include "../2022/Day9.h"
 #include "../2022/Day10.h"
+#include "../2023/Day1.h"
 
 void RegisterDays(DayFactory& dayFactory) {
 	dayFactory.RegisterDay("Y2022_D1", []() { return new Day1_2022(); });
@@ -21,4 +22,5 @@ void RegisterDays(DayFactory& dayFactory) {
 	dayFactory.RegisterDay("Y2022_D8", []() { return new Day8_2022(); });
 	dayFactory.RegisterDay("Y2022_D9", []() { return new Day9_2022(); });
 	dayFactory.RegisterDay("Y2022_D10", []() { return new Day10_2022(); });
+	dayFactory.RegisterDay("Y2023_D1", []() { return new Day1_2023(); });
 }
