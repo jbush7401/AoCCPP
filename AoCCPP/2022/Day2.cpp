@@ -1,6 +1,7 @@
 #include "Day2.h"
 #include "Util.h"
 #include <iostream>
+#include "Day2.h"
 
 void Day2_2022::PartOne()
 {
@@ -110,3 +111,4 @@ Day2_2022::rps Day2_2022::WhatLoses(rps player)
 
 	}
 }
+

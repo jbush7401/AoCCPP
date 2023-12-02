@@ -159,6 +159,7 @@
     <ClCompile Include="2022\Day8.cpp" />
     <ClCompile Include="2022\Day9.cpp" />
     <ClCompile Include="2023\Day1.cpp" />
+    <ClCompile Include="2023\Day2.cpp" />
     <ClCompile Include="Include\DayRegistry.cpp" />
     <ClCompile Include="Include\IDay.h" />
     <ClCompile Include="Include\Util.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="2022\Day8.h" />
     <ClInclude Include="2022\Day9.h" />
     <ClInclude Include="2023\Day1.h" />
+    <ClInclude Include="2023\Day2.h" />
     <ClInclude Include="Include\DayFactory.h" />
     <ClInclude Include="Include\DayRegistry.h" />
     <ClInclude Include="Include\Util.h" />
@@ -193,6 +195,7 @@
     <Text Include="2022\Input\Day8.txt" />
     <Text Include="2022\Input\Day9.txt" />
     <Text Include="2023\Input\Day1.txt" />
+    <Text Include="2023\Input\Day2.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
