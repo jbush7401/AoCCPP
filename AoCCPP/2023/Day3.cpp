@@ -36,7 +36,6 @@ void Day3_2023::PartOne()
 	int sum = 0;
 	for (NumberInMatrix& nim : numbersInMatrix) {
 		if (IsValidPart(nim)) {
-			nim.valid = true;
 			sum += std::stoi(nim.number);
 		}
 	}

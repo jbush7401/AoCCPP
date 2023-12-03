@@ -23,7 +23,6 @@ public:
         NumberInMatrix(std::string n, Pos p) : number(n), pos(p) {};
         std::string number = "";
         Pos pos;
-        bool valid = false;
 
         bool operator== (const NumberInMatrix& n1) {
             if (this->number == n1.number && this->pos.x == n1.pos.x && this->pos.y == n1.pos.y)
