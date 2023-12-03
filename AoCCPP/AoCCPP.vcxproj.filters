@@ -63,6 +63,9 @@
     <ClCompile Include="2023\Day2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="2023\Day3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\DayFactory.h">
@@ -110,6 +113,9 @@
     <ClInclude Include="2023\Day2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="2023\Day3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="2022\Input\Day1.txt" />
@@ -125,5 +131,6 @@
     <Text Include="2023\Input\Day1.txt" />
     <Text Include="2022\Input\Day11.txt" />
     <Text Include="2023\Input\Day2.txt" />
+    <Text Include="2023\Input\Day3.txt" />
   </ItemGroup>
 </Project>
