@@ -8,7 +8,7 @@ void Day4_2023::PartOne()
 	int sum = 0;
 	int currentCard = 0;
 	for (int i = 0; i < vec.size(); i++) {
-		cardCopies.push_back(CardCopy());
+		cardCopies.push_back(1);
 	}
 	for (std::string& line : vec) {
 		replaceAll(line, "  ", " ");
@@ -27,9 +27,9 @@ void Day4_2023::PartOne()
 			for (int i = 1; i < found; i++){
 				cardAward *= 2;
 				currentTempCard++;
-				cardCopies[currentTempCard].copies += cardCopies[currentCard].copies;
+				cardCopies[currentTempCard] += cardCopies[currentCard];
 			}
-			cardCopies[currentTempCard+1].copies += cardCopies[currentCard].copies;
+			cardCopies[currentTempCard+1] += cardCopies[currentCard];
 			sum += cardAward;
 		}
 		currentCard++;
@@ -41,8 +41,8 @@ void Day4_2023::PartOne()
 void Day4_2023::PartTwo()
 {
 	int sum = 0;
-	for (const CardCopy& c : cardCopies)
-		sum += c.copies;
+	for (const int& c : cardCopies)
+		sum += c;
 	std::cout << "Part 2: " << sum << std::endl;
 }
 

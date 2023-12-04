@@ -14,5 +14,5 @@ public:
     public:
         int copies = 1;
     };
-    std::vector<CardCopy> cardCopies;
+    std::vector<int> cardCopies;
 };
