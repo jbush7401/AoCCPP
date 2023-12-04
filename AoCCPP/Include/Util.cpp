@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
 #include <algorithm> 
 #include <functional> 
 #include <cctype>
@@ -67,26 +68,17 @@ std::vector<std::string> DelimitedToString(const std::string& s, char delimiter)
     return strings;
 }
 
-std::vector<int> DelimitedToInt(const std::string& s, char delimiter)
+std::vector<int> StringToInts(const std::string& s)
 {
-    std::vector<int> nums;
-    int pos = 0;
-    for (int i = 0; i < s.size(); i++) {
-        if (s[i] == delimiter) {
-            std::string t = s.substr(pos, i - pos);
-            nums.push_back(std::stoi(t));
-            pos = i + 1;
-        }
-        else
-        {
-            if (i == s.size() - 1) {
-                std::string t = s.substr(pos);
-                nums.push_back(std::stoi(t));
-            }
-        }
+    std::vector<int> result;
+    std::istringstream iss(s);
+    int number;
 
+    while (iss >> number) {
+        result.push_back(number);
     }
-    return nums;
+
+    return result;
 }
 
 void replaceAll(std::string& str, const std::string& from, const std::string& to) {

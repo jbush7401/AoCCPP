@@ -11,10 +11,9 @@ void Day4_2023::PartOne()
 		cardCopies.push_back(1);
 	}
 	for (std::string& line : vec) {
-		replaceAll(line, "  ", " ");
 		int found = 0;
-		std::vector<int> winningNumbers = DelimitedToInt(line.substr(line.find(':') + 2, line.find('|') - line.find(':') - 3), ' ');
-		std::vector<int> yourNumbers = DelimitedToInt(line.substr(line.find('|') + 2), ' ');
+		std::vector<int> winningNumbers = StringToInts(line.substr(line.find(':') + 2, line.find('|') - line.find(':') - 3));
+		std::vector<int> yourNumbers = StringToInts(line.substr(line.find('|') + 2));
 		for (int& winningNumber : winningNumbers) {
 			for (int& yourNumber : yourNumbers) {
 				if (yourNumber == winningNumber)
