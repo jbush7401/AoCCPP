@@ -27,11 +27,9 @@ void Day4_2023::PartOne()
 			for (int i = 1; i < found; i++){
 				cardAward *= 2;
 				currentTempCard++;
-				for (int i = 1; i <= cardCopies[currentCard].copies; i++)
-					cardCopies[currentTempCard].copies++;
+				cardCopies[currentTempCard].copies += cardCopies[currentCard].copies;
 			}
-			for (int i = 1; i <= cardCopies[currentCard].copies; i++)
-				cardCopies[currentTempCard+1].copies++;
+			cardCopies[currentTempCard+1].copies += cardCopies[currentCard].copies;
 			sum += cardAward;
 		}
 		currentCard++;
