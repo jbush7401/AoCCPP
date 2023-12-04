@@ -13,7 +13,7 @@ int main() {
     std::cout << "Enter the Year and Day of the Problem (IE 2022 1): ";
     std::cin >> year >> day;
 
-    IDay* instance = dayFactory.CreateInstance(year, day);
+    std::unique_ptr<IDay> instance = dayFactory.CreateInstance(year, day);
     if (instance) {
         auto start = std::chrono::high_resolution_clock::now();
         instance->PartOne();
@@ -29,7 +29,6 @@ int main() {
             elapsed2).count();
         std::cout << "Part 2 Time: " << ms2 << std::endl;
         std::cout << "Total time: " << ms + ms2;
-        delete instance; // Don't forget to delete the instance after using it
     }
     else {
         std::cout << "Couldn't find or load the class for Year " << year << " Day " << day << ".\n";

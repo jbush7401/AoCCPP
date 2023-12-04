@@ -8,7 +8,7 @@
 #include <locale>
 
 
-std::vector<std::string> GetVectorFromTxt(std::string path)
+std::vector<std::string> GetVectorFromTxt(const std::string& path)
 {
     std::string line;
     std::ifstream myfile(path);
@@ -25,7 +25,7 @@ std::vector<std::string> GetVectorFromTxt(std::string path)
     return vec;
 }
 
-std::string GetStringFromTxt(std::string path)
+std::string GetStringFromTxt(const std::string& path)
 {
 
     std::string line;
@@ -43,12 +43,10 @@ std::string GetStringFromTxt(std::string path)
     return s;
 }
 
-std::vector<std::string> DelimitedToString(std::string s, char delimiter)
+std::vector<std::string> DelimitedToString(const std::string& s, char delimiter)
 {
     std::vector<std::string> strings;
     int pos = 0;
-    if (s.size() == 0)
-        return strings;
     for (int i = 0; i < s.size(); i++) {
         if (s[i] == delimiter){
             std::string t = s.substr(pos, i - pos);
@@ -67,6 +65,38 @@ std::vector<std::string> DelimitedToString(std::string s, char delimiter)
        
     }
     return strings;
+}
+
+std::vector<int> DelimitedToInt(const std::string& s, char delimiter)
+{
+    std::vector<int> nums;
+    int pos = 0;
+    for (int i = 0; i < s.size(); i++) {
+        if (s[i] == delimiter) {
+            std::string t = s.substr(pos, i - pos);
+            nums.push_back(std::stoi(t));
+            pos = i + 1;
+        }
+        else
+        {
+            if (i == s.size() - 1) {
+                std::string t = s.substr(pos);
+                nums.push_back(std::stoi(t));
+            }
+        }
+
+    }
+    return nums;
+}
+
+void replaceAll(std::string& str, const std::string& from, const std::string& to) {
+    if (from.empty())
+        return;
+    size_t start_pos = 0;
+    while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+        str.replace(start_pos, from.length(), to);
+        start_pos += to.length(); // In case 'to' contains 'from', like replacing 'x' with 'yx'
+    }
 }
 
 // trim from start (in place)
