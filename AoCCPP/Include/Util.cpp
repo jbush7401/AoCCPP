@@ -68,6 +68,31 @@ std::vector<std::string> DelimitedToString(const std::string& s, char delimiter)
     return strings;
 }
 
+std::vector<int> DelimitedToInts(const std::string& s, char delimiter)
+{
+    std::vector<int> strings;
+    int pos = 0;
+    for (int i = 0; i < s.size(); i++) {
+        if (s[i] == delimiter) {
+            std::string t = s.substr(pos, i - pos);
+            trim(t);
+            strings.push_back(std::stoi(t));
+            pos = i + 1;
+        }
+        else
+        {
+            if (i == s.size() - 1) {
+                std::string t = s.substr(pos);
+                trim(t);
+                strings.push_back(std::stoi(t));
+            }
+        }
+
+    }
+    return strings;
+}
+
+
 std::vector<int> StringToInts(const std::string& s)
 {
     std::vector<int> result;

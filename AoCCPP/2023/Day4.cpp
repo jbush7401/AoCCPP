@@ -7,9 +7,8 @@ void Day4_2023::PartOne()
 	vec = GetVectorFromTxt("2023/Input/Day4.txt");
 	int sum = 0;
 	int currentCard = 0;
-	for (int i = 0; i < vec.size(); i++) {
-		cardCopies.push_back(1);
-	}
+	cardCopies = std::vector<int>(vec.size(), 1);
+	
 	for (std::string& line : vec) {
 		int found = 0;
 		std::vector<int> winningNumbers = StringToInts(line.substr(line.find(':') + 2, line.find('|') - line.find(':') - 3));
