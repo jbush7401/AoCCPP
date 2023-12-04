@@ -9,10 +9,6 @@ public:
     void PartTwo(); // declaration of PartTwo function
 
     std::vector<std::string> vec;
-
-    struct CardCopy {
-    public:
-        int copies = 1;
-    };
+   
     std::vector<int> cardCopies;
 };
