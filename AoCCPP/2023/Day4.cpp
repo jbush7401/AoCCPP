@@ -11,8 +11,8 @@ void Day4_2023::PartOne()
 	
 	for (std::string& line : vec) {
 		int found = 0;
-		std::vector<int> winningNumbers = StringToInts(line.substr(line.find(':') + 2, line.find('|') - line.find(':') - 3));
-		std::vector<int> yourNumbers = StringToInts(line.substr(line.find('|') + 2));
+		std::vector<int> winningNumbers = StringToInts<int>(line.substr(line.find(':') + 2, line.find('|') - line.find(':') - 3));
+		std::vector<int> yourNumbers = StringToInts<int>(line.substr(line.find('|') + 2));
 		for (int& winningNumber : winningNumbers) {
 			for (int& yourNumber : yourNumbers) {
 				if (yourNumber == winningNumber)

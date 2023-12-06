@@ -1,8 +1,6 @@
 #include "Util.h"
 #include <iostream>
 #include <fstream>
-#include <string>
-#include <sstream>
 #include <algorithm> 
 #include <functional> 
 #include <cctype>
@@ -93,18 +91,6 @@ std::vector<int> DelimitedToInts(const std::string& s, char delimiter)
 }
 
 
-std::vector<int> StringToInts(const std::string& s)
-{
-    std::vector<int> result;
-    std::istringstream iss(s);
-    int number;
-
-    while (iss >> number) {
-        result.push_back(number);
-    }
-
-    return result;
-}
 
 void replaceAll(std::string& str, const std::string& from, const std::string& to) {
     if (from.empty())
