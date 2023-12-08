@@ -90,8 +90,6 @@ std::vector<int> DelimitedToInts(const std::string& s, char delimiter)
     return strings;
 }
 
-
-
 void replaceAll(std::string& str, const std::string& from, const std::string& to) {
     if (from.empty())
         return;

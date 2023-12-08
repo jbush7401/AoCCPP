@@ -34,28 +34,45 @@ void Day5_2023::PartOne()
 
 void Day5_2023::PartTwo()
 {
+	long long lowest = LLONG_MAX;
+	PartTwoInefficient();
+}
+
+void Day5_2023::PartTwoInefficient() {
+
 	long long lowest = LONG_MAX;
 	long long numCheck = 0;
 	for (int i = 0; i < seedsPart2.size(); i += 2) {
-		for (int j = seedsPart2[i]; j < seedsPart2[i] + seedsPart2[i + 1]; j++) {
+		for (long long j = seedsPart2[i]; j < seedsPart2[i] + seedsPart2[i + 1]; j++) {
+			numCheck = j;
 			for (int k = 0; k < 7; k++)
-				j = ProcessNumber(maps[k], j);
-			if (j < lowest)
-				lowest = j;
+				numCheck = ProcessNumber(maps[k], numCheck);
+			if (numCheck < lowest)
+				lowest = numCheck;
 		}
 	}
-	
 	std::cout << "Part 2: " << lowest << std::endl;
 }
 
-long long Day5_2023::ProcessNumber(std::vector<SourceDestMap> map, long long num)
+long long Day5_2023::ProcessNumber(const std::vector<SourceDestMap>& map, const long long& num)
 {
 	long long destNum = num;
-	for(SourceDestMap sdm: map)
+	for(const SourceDestMap& sdm: map)
 		if (num >= sdm.source && num <= sdm.source + sdm.value - 1) {
 			return num + sdm.dest - sdm.source;
 		}
 	return num;
+}
+
+long long Day5_2023::ProcessNumberBackwards(const std::vector<SourceDestMap>& map, const long long& num)
+{
+	long long destNum = num;
+	for (const SourceDestMap& sdm : map)
+		if (num >= sdm.source && num <= sdm.source + sdm.value - 1) {
+			return num + sdm.dest - sdm.source;
+		}
+	return num;
+	// Destination number comes in for each sdm, if >= dest && <= dest + value-1  num+source-dest
 }
 
 

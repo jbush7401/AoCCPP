@@ -7,6 +7,7 @@ class Day5_2023 : public IDay {
 public:
     void PartOne(); // declaration of PartOne function
     void PartTwo(); // declaration of PartTwo function
+    void PartTwoInefficient();
 
     std::vector<std::string> vec;
 
@@ -23,5 +24,7 @@ public:
 
     std::vector<SourceDestMap> maps[7] = {};
 
-    long long ProcessNumber(std::vector<SourceDestMap> map, long long num);
+    long long ProcessNumber(const std::vector<SourceDestMap>& map, const long long& num);
+    long long ProcessNumberBackwards(const std::vector<SourceDestMap>& map, const long long& num);
+    
 };
