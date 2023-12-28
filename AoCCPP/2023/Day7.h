@@ -25,8 +25,8 @@ public:
            
             if (h1.handStr == h2.handStr) {
                 for (int i = 0; i < 5; i++) {
-                    int h1Rank = cards.find_first_of(h1.originalHand[i]);
-                    int h2Rank = cards.find_first_of(h2.originalHand[i]);
+                    size_t h1Rank = cards.find_first_of(h1.originalHand[i]);
+                    size_t h2Rank = cards.find_first_of(h2.originalHand[i]);
                     if (h1Rank == h2Rank)
                         continue;
                     return h1Rank < h2Rank;
@@ -36,7 +36,8 @@ public:
         }
     };
 
-    HandRank FindRank(Hand& h);
+    HandRank FindRank(Hand& h, bool part2 = false);
+    long CalcFinal();
     std::vector<Hand> hands = {};
 
 private:

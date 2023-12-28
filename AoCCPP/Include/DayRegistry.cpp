@@ -16,6 +16,7 @@
 #include "../2023/Day5.h"
 #include "../2023/Day6.h"
 #include "../2023/Day7.h"
+#include "../2023/Day8.h"
 
 void RegisterDays(DayFactory& dayFactory) {
 	dayFactory.RegisterDay("Y2022>_D1", []() { return std::make_unique<Day1_2022>(); });
@@ -35,4 +36,5 @@ void RegisterDays(DayFactory& dayFactory) {
 	dayFactory.RegisterDay("Y2023_D5", []() { return std::make_unique<Day5_2023>(); });
 	dayFactory.RegisterDay("Y2023_D6", []() { return std::make_unique<Day6_2023>(); });
 	dayFactory.RegisterDay("Y2023_D7", []() { return std::make_unique<Day7_2023>(); });
+	dayFactory.RegisterDay("Y2023_D8", []() { return std::make_unique<Day8_2023>(); });
 }
