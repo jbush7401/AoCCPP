@@ -21,5 +21,5 @@ public:
 
     std::unordered_map<std::string, Node> dict;
 
-    
+    std::vector<Node> part2Starts;
 };
