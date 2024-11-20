@@ -33,31 +33,21 @@ void Day8_2023::PartOne() {
 	std::cout << "Part 1: " << steps << std::endl;
 }
 void Day8_2023::PartTwo() {
+
+	//Get all 3 Letters that end with 'A'
 	for (auto n : dict) {
 		if (n.first[2] == 'A') {
 			part2Starts.push_back(n.second);
 		}
 	}
+
+	// Find Steps of first node to Z, check if other steps in starting steps also end with Z, break as soon as no Z is found and go to the next 'Z'
 	
-	long steps = 0;
+	long stepToFirst  = 0;
 
 	bool found = false;
-	std::string next = "";
-	while (!found) {
-		for (char c : instructions) {
-			found = true;
-			for (Node& n : part2Starts) {
-				if (c == 'R')
-					next = n.right;
-				else
-					next = n.left;
-				
-				if (found == true && next[2] != 'Z')
-					found = false;
-				n = dict.at(next);
-			}
-			steps++;
-		}
-	}
+
+	long steps = 0;
+	
 	std::cout << "Part 2: " << steps << std::endl;
 }
