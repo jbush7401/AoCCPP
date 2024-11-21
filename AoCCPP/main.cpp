@@ -13,7 +13,7 @@ int main() {
     std::cout << "Enter the Year and Day of the Problem (IE 2022 1): ";
     std::cin >> year >> day;
 
-    std::unique_ptr<IDay> instance = dayFactory.CreateInstance(year, day);
+    std::unique_ptr<IDay> instance = dayFactory.CreateInstance(std::stoi(year), std::stoi(day));
     if (instance) {
         auto start = std::chrono::high_resolution_clock::now();
         instance->PartOne();

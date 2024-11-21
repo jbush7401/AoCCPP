@@ -24,7 +24,7 @@ public:
         std::string number = "";
         Pos pos;
 
-        bool operator== (const NumberInMatrix& n1) {
+        bool operator== (const NumberInMatrix& n1) const {
             if (this->number == n1.number && this->pos.x == n1.pos.x && this->pos.y == n1.pos.y)
                 return true;
             return false;
