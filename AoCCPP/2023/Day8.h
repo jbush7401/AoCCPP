@@ -8,6 +8,7 @@ class Day8_2023 : public IDay {
 public:
     void PartOne(); // declaration of PartOne function
     void PartTwo(); // declaration of PartTwo function
+    
 
     std::vector<std::string> vec;
 
@@ -19,7 +20,10 @@ public:
         std::string right;
     };
 
+    long GetStepsToNode(const std::string &start, const std::vector<std::string> &finishes);
+
     std::unordered_map<std::string, Node> dict;
 
-    std::vector<Node> part2Starts;
+    std::vector<std::string> part2Starts;
+    std::vector<std::string> part2Finishes;
 };

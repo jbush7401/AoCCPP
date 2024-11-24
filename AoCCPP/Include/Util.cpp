@@ -118,3 +118,6 @@ static inline void trim(std::string& s) {
     ltrim(s);
 }
 
+// Math Functions
+
+
