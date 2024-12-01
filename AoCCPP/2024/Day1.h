@@ -8,6 +8,6 @@ public:
 	void PartOne();
 	void PartTwo();
 
-	std::vector<int> list1;
-	std::vector<int> list2;
+	std::vector<int32_t> list1;
+	std::vector<int32_t> list2;
 };

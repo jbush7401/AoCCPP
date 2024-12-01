@@ -13,7 +13,8 @@ void Day1_2024::PartOne()
     {
         while (getline(myfile, line))
         {
-            int pos = line.find_first_of('   ');
+            size_t pos = 0;
+            while (pos < line.size() && line[pos] != ' ') pos++;
             list1.push_back(std::stoi(line.substr(0, pos)));
             list2.push_back(std::stoi(line.substr(pos+1)));
         }
