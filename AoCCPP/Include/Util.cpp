@@ -70,6 +70,8 @@ std::vector<int> DelimitedToInts(const std::string& s, char delimiter)
 {
     std::vector<int> strings;
     int pos = 0;
+    if (s.length() == 0)
+        return strings;
     for (int i = 0; i < s.size(); i++) {
         if (s[i] == delimiter) {
             std::string t = s.substr(pos, i - pos);

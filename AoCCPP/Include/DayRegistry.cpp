@@ -17,6 +17,8 @@
 #include "../2023/Day6.h"
 #include "../2023/Day7.h"
 #include "../2023/Day8.h"
+#include "../2023/Day9.h"
+#include "../2024/Day1.h"
 
 void RegisterDays(DayFactory& dayFactory) {
 	dayFactory.RegisterDay<Day1_2022>(2022, 1);
@@ -37,4 +39,6 @@ void RegisterDays(DayFactory& dayFactory) {
 	dayFactory.RegisterDay<Day6_2023>(2023, 6);
 	dayFactory.RegisterDay<Day7_2023>(2023, 7);
 	dayFactory.RegisterDay<Day8_2023>(2023, 8);
+	dayFactory.RegisterDay<Day9_2023>(2023, 9);
+	dayFactory.RegisterDay<Day1_2024>(2024, 1);
 }
