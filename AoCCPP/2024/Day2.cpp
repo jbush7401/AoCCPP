@@ -40,12 +40,10 @@ bool Day2_2024::processSafe(std::vector<int> &nums){
 	if (nums[0] < nums[1])
 		funcPtr = [](int x, int y) {return x < y; };
 
-	for (std::vector<int>::iterator it = nums.begin(); it != nums.end(); ++it) {
-		if (std::next(it) != nums.end()) {
-			if (!NumCheck(funcPtr, *it, *std::next(it)))
-			{
-				return false;
-			}
+	for (int i = 0; i < nums.size()-1; i++) {
+		if (!NumCheck(funcPtr, nums[i], nums[i+1]))
+		{
+			return false;
 		}
 	}
 	return true;
