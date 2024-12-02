@@ -9,7 +9,7 @@ void Day9_2023::PartOne()
 
 	// Load up all the histories.
 	for (const std::string &i : vec) {
-		histories.push_back(DelimitedToInts(i, ' '));
+		histories.push_back(DelimitedToInts(i));
 	}
 
 	// Now need to take each history and make another vector<vector<int>> for it to process it

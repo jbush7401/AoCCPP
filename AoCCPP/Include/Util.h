@@ -7,7 +7,7 @@ std::vector<std::string> GetVectorFromTxt(const std::string& path);
 std::vector<std::vector<int>> GetVectorIntsFromTxt(const std::string& path);
 std::string GetStringFromTxt(const std::string& path);
 std::vector<std::string> DelimitedToString(const std::string& s, char delimiter);
-std::vector<int> DelimitedToInts(const std::string& s, char delimiter);
+std::vector<int> DelimitedToInts(const std::string& s);
 
 template<typename T>
 std::vector<T> StringToInts(const std::string& s)

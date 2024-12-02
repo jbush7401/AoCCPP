@@ -21,8 +21,7 @@ void Day2_2024::PartTwo()
 	for (std::vector<int> nums : data) {
 		if (!processSafe(nums)) {
 			for (int i = 0; i != nums.size(); i++) {
-				std::vector<int> temp = removeAtIndex(i, nums);
-				if (processSafe(temp)){
+				if (processSafe(removeAtIndex(i, nums))){
 					safeTotal++;
 					break;
 				}
@@ -35,7 +34,7 @@ void Day2_2024::PartTwo()
 	std::cout << "Part 2: " << safeTotal << std::endl;
 }
 
-bool Day2_2024::processSafe(std::vector<int> &nums){
+bool Day2_2024::processSafe(const std::vector<int> &nums){
 	bool (*funcPtr)(int, int) = [](int x, int y) {return x > y; };
 	if (nums[0] < nums[1])
 		funcPtr = [](int x, int y) {return x < y; };

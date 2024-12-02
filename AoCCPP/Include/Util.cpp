@@ -5,6 +5,7 @@
 #include <functional> 
 #include <cctype>
 #include <locale>
+#include <charconv>
 
 
 std::vector<std::string> GetVectorFromTxt(const std::string& path)
@@ -33,7 +34,7 @@ std::vector<std::vector<int>> GetVectorIntsFromTxt(const std::string& path)
     {
         while (getline(myfile, line))
         {
-            vec.push_back(DelimitedToInts(line, ' '));
+            vec.push_back(DelimitedToInts(line));
         }
         myfile.close();
     }
@@ -83,30 +84,29 @@ std::vector<std::string> DelimitedToString(const std::string& s, char delimiter)
     return strings;
 }
 
-std::vector<int> DelimitedToInts(const std::string& s, char delimiter)
+std::vector<int> DelimitedToInts(const std::string& s)
 {
-    std::vector<int> strings;
-    int pos = 0;
-    if (s.length() == 0)
-        return strings;
-    for (int i = 0; i < s.size(); i++) {
-        if (s[i] == delimiter) {
-            std::string t = s.substr(pos, i - pos);
-            trim(t);
-            strings.push_back(std::stoi(t));
-            pos = i + 1;
-        }
-        else
-        {
-            if (i == s.size() - 1) {
-                std::string t = s.substr(pos);
-                trim(t);
-                strings.push_back(std::stoi(t));
-            }
-        }
+    std::vector<int> numbers;
+    const char* str = s.c_str();
+    const char* end = str + s.size();
 
+    while (str < end) {
+        // Skip leading whitespace
+        while (str < end && std::isspace(*str)) ++str;
+        if (str >= end) break;
+
+        int value;
+        auto [ptr, ec] = std::from_chars(str, end, value);
+        if (ec == std::errc()) {
+            numbers.push_back(value);
+            str = ptr;
+        }
+        else {
+            // Handle parsing error if necessary
+            break;
+        }
     }
-    return strings;
+    return numbers;
 }
 
 void replaceAll(std::string& str, const std::string& from, const std::string& to) {
