@@ -2,19 +2,11 @@
 #include "Util.h"
 #include <iostream>
 
-bool GreaterThan(int x, int y) {
-	return x > y;
-}
-
-bool LessThan(int x, int y) {
-	return x < y;
-}
-
 void Day2_2024::PartOne()
 {
 	data = GetVectorIntsFromTxt("2024/Input/Day2.txt");
 
-	long safeTotal = 0;
+	int safeTotal = 0;
 	for (std::vector<int> nums : data) {
 		if(processSafe(nums))
 			safeTotal++;
@@ -25,7 +17,7 @@ void Day2_2024::PartOne()
 
 void Day2_2024::PartTwo()
 {
-	long safeTotal = 0;
+	int safeTotal = 0;
 	for (std::vector<int> nums : data) {
 		if (!processSafe(nums)) {
 			for (int i = 0; i != nums.size(); i++) {
@@ -44,10 +36,9 @@ void Day2_2024::PartTwo()
 }
 
 bool Day2_2024::processSafe(std::vector<int> &nums){
-	bool (*funcPtr)(int, int) = GreaterThan;
-	int numUnsafe = 0;
+	bool (*funcPtr)(int, int) = [](int x, int y) {return x > y; };
 	if (nums[0] < nums[1])
-		funcPtr = LessThan;
+		funcPtr = [](int x, int y) {return x < y; };
 
 	for (std::vector<int>::iterator it = nums.begin(); it != nums.end(); ++it) {
 		if (std::next(it) != nums.end()) {

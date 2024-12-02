@@ -11,5 +11,5 @@ class Day2_2024 : public IDay {
 
 	bool processSafe(std::vector<int>& nums);
 	bool NumCheck(bool (*func)(int, int), int x, int y);
-	std::vector<int> removeAtIndex(int index, const std::vector<int>& nums);
+	std::vector<int> removeAtIndex(int index, const std::vector<int> &nums);
 };
