@@ -18,7 +18,7 @@
 #include "../2023/Day7.h"
 #include "../2023/Day8.h"
 #include "../2023/Day9.h"
-#include "../2024/Day1.h"
+#include "../2024/Day1_2024.h"
 #include "../2024/Day2.h"
 #include "../2024/Day3.h"
 

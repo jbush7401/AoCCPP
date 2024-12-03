@@ -171,7 +171,12 @@
     <ClCompile Include="2023\Day7.cpp" />
     <ClCompile Include="2023\Day8.cpp" />
     <ClCompile Include="2023\Day9.cpp" />
-    <ClCompile Include="2024\Day1.cpp" />
+    <ClCompile Include="2024\Day1_2024.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="2024\Day2.cpp" />
     <ClCompile Include="2024\Day3.cpp" />
     <ClCompile Include="Include\DayRunner.cpp" />
@@ -200,7 +205,7 @@
     <ClInclude Include="2023\Day7.h" />
     <ClInclude Include="2023\Day8.h" />
     <ClInclude Include="2023\Day9.h" />
-    <ClInclude Include="2024\Day1.h" />
+    <ClInclude Include="2024\Day1_2024.h" />
     <ClInclude Include="2024\Day2.h" />
     <ClInclude Include="2024\Day3.h" />
     <ClInclude Include="Include\DayFactory.h" />

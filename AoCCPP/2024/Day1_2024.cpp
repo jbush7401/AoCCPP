@@ -1,4 +1,4 @@
-#include "Day1.h"
+#include "Day1_2024.h"
 #include "Util.h"
 #include <fstream>
 #include <algorithm>

@@ -2,6 +2,7 @@
 #include "Util.h"
 #include <iostream>
 #include <charconv>
+#include <regex>
 
 void Day3_2024::PartOne()
 {
@@ -25,6 +26,7 @@ void Day3_2024::PartOne()
 		pos++;
 	}
 	std::cout << "Part 1: " << part1Sum << std::endl;
+
 }
 
 void Day3_2024::PartTwo()
