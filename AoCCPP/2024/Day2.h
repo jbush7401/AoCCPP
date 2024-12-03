@@ -4,6 +4,9 @@
 #include <string>
 
 class Day2_2024 : public IDay {
+	int part1Sum = 0;
+	int part2Sum = 0;
+	
 	void PartOne();
 	void PartTwo();
 

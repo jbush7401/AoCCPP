@@ -7,7 +7,7 @@ void Day2_2024::PartOne()
 	data = GetVectorIntsFromTxt("2024/Input/Day2.txt");
 
 	int safeTotal = 0;
-	for (std::vector<int> nums : data) {
+	for (const std::vector<int> nums : data) {
 		if(processSafe(nums))
 			safeTotal++;
 	}
