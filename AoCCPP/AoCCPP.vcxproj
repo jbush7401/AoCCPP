@@ -177,8 +177,9 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="2024\Day2.cpp" />
-    <ClCompile Include="2024\Day3.cpp" />
+    <ClCompile Include="2024\Day2_2024.cpp" />
+    <ClCompile Include="2024\Day3_2024.cpp" />
+    <ClCompile Include="2024\Day4_2024.cpp" />
     <ClCompile Include="Include\DayRunner.cpp" />
     <ClCompile Include="Include\DayRegistry.cpp" />
     <ClCompile Include="Include\IDay.h" />
@@ -206,8 +207,9 @@
     <ClInclude Include="2023\Day8.h" />
     <ClInclude Include="2023\Day9.h" />
     <ClInclude Include="2024\Day1_2024.h" />
-    <ClInclude Include="2024\Day2.h" />
-    <ClInclude Include="2024\Day3.h" />
+    <ClInclude Include="2024\Day2_2024.h" />
+    <ClInclude Include="2024\Day3_2024.h" />
+    <ClInclude Include="2024\Day4_2024.h" />
     <ClInclude Include="Include\DayFactory.h" />
     <ClInclude Include="Include\DayRegistry.h" />
     <ClInclude Include="Include\Util.h" />
@@ -236,6 +238,7 @@
     <Text Include="2024\Input\Day1.txt" />
     <Text Include="2024\Input\Day2.txt" />
     <Text Include="2024\Input\Day3.txt" />
+    <Text Include="2024\Input\Day4.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -90,10 +90,13 @@
     <ClCompile Include="2024\Day1_2024.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="2024\Day2.cpp">
+    <ClCompile Include="2024\Day2_2024.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="2024\Day3.cpp">
+    <ClCompile Include="2024\Day3_2024.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="2024\Day4_2024.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -167,10 +170,13 @@
     <ClInclude Include="2024\Day1_2024.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="2024\Day2.h">
+    <ClInclude Include="2024\Day2_2024.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="2024\Day3.h">
+    <ClInclude Include="2024\Day3_2024.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="2024\Day4_2024.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -198,5 +204,6 @@
     <Text Include="2024\Input\Day1.txt" />
     <Text Include="2024\Input\Day2.txt" />
     <Text Include="2024\Input\Day3.txt" />
+    <Text Include="2024\Input\Day4.txt" />
   </ItemGroup>
 </Project>

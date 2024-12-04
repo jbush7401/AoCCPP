@@ -42,6 +42,26 @@ std::vector<std::vector<int>> GetVectorIntsFromTxt(const std::string& path)
     return vec;
 }
 
+std::vector<std::vector<char>> Get2dVectorMatrixFromTxt(const std::string& path) {
+    std::string line;
+    std::ifstream myfile(path);
+    std::vector<std::vector<char>> vec;
+    if (myfile.is_open())
+    {
+        while (getline(myfile, line))
+        {
+            std::vector<char> l;
+            for (char c : line)
+                l.push_back(c);
+            vec.push_back(l);
+        }
+        myfile.close();
+    }
+    else std::cout << "Unable to open file";
+    return vec;
+}
+
+
 std::string GetStringFromTxt(const std::string& path)
 {
 
