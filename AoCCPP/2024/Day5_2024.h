@@ -12,8 +12,6 @@ class Day5_2024 : public IDay {
 		bool isValid = true;
 	};
 
-	bool CheckUpdateValid(Update u);
-
 	std::unordered_map<int, std::vector<int>> protocols;
 	std::vector<Update> updates;
 };
