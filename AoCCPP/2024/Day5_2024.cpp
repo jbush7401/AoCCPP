@@ -47,14 +47,18 @@ void Day5_2024::PartOne()
     // For each number check to make sure it is before the numbers it should be for each update, add to false list if not.
     for (const auto& pair : protocols) { 
         for (Update &update : updates) {
-            auto it = std::find(update.values.begin(), update.values.end(), pair.first);
-            if (it != update.values.end()) {
-                // It is in the update, now check each number before the first if it is in pair.second
-                for (int i = 0; i < std::distance(update.values.begin(), it); i++) {
-                    if (std::find(pair.second.begin(), pair.second.end(), update.values[i]) != pair.second.end())
-                    {
-                        update.isValid = false;
-                        update.fixed = false;
+            if(update.isValid){
+                // Check if this protoctal first is in the current update
+                auto it = std::find(update.values.begin(), update.values.end(), pair.first);
+                if (it != update.values.end()) {
+                    // It is in the update, now check each number before the first if it is in pair.second
+                    for (int i = 0; i < std::distance(update.values.begin(), it); i++) {
+                        if (std::find(pair.second.begin(), pair.second.end(), update.values[i]) != pair.second.end())
+                        {
+                            update.isValid = false;
+                            update.fixed = false;
+                            break;
+                        }
                     }
                 }
             }
@@ -71,7 +75,6 @@ void Day5_2024::PartOne()
 
 void Day5_2024::PartTwo()
 {
-
     // Iterate through the bad updates
     for (Update &u : updates) {
         while (!u.fixed)
@@ -80,16 +83,14 @@ void Day5_2024::PartTwo()
             for (int v = 0; v < u.values.size(); v++) {
                 // Get the protocol for the current update value
                 std::vector<int> prot = protocols[u.values[v]];
-                //Should this current value be below any of the values in the current protocol?
-                for(int p: prot)
-                    for (int c = 0; c < v; c++) {
-                        if (u.values[c] == p) {
-                            //Move values[v] to index c
-                            MoveElement(u.values, v, c);
-                        }
+                // Are any of the values below the current value in the update in the protocol?
+                for (int c = 0; c < v; c++) 
+                    if (std::find(prot.begin(), prot.end(), u.values[c]) != prot.end()) {
+                        //Move values[v] to index c
+                        MoveElement(u.values, v, c);
                     }
-            }
-            u.fixed = CheckUpdateValid(u);
+                }
+                u.fixed = CheckUpdateValid(u);
         }
     }
     int sum = 0;
