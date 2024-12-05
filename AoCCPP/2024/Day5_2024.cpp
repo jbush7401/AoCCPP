@@ -73,8 +73,7 @@ void Day5_2024::PartTwo()
                 std::vector<int> common;
                 std::sort(prot.begin(), prot.end());
                 std::set_intersection(u.values.begin(), u.values.end(), prot.begin(), prot.end(), std::back_inserter(common));
-                int count = common.size();
-                newOrder[newOrder.size() - count - 1] = val;
+                newOrder[newOrder.size() - common.size() - 1] = val;
             }
             u.values = newOrder;
         }
@@ -84,7 +83,7 @@ void Day5_2024::PartTwo()
     for (Update i : updates) {
         sum += i.isValid ? 0 : i.values[i.values.size() / 2];
     }
-    std::cout << "Part 2: " << sum << " Swapped: " << swap << std::endl;
+    std::cout << "Part 2: " << sum << std::endl;
 
 }
 
