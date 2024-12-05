@@ -10,7 +10,6 @@ class Day5_2024 : public IDay {
 	struct Update {
 		std::vector<int> values;
 		bool isValid = true;
-		bool fixed = true;
 	};
 
 	bool CheckUpdateValid(Update u);

@@ -39,7 +39,6 @@ void Day5_2024::PartOne()
                         if (std::find(pair.second.begin(), pair.second.end(), update.values[i]) != pair.second.end())
                         {
                             update.isValid = false;
-                            update.fixed = false;
                             break;
                         }
                     }
@@ -59,29 +58,34 @@ void Day5_2024::PartOne()
 void Day5_2024::PartTwo()
 {
     // Iterate through the bad updates
-    for (Update &u : updates) {
-        bool fixed = false;
-        while (!fixed)
+    for (Update& u : updates) {
+        if (!u.isValid)
         {
-            fixed = true;
-            // Iterate through each number in the update values
-            for (int v = 0; v < u.values.size(); v++) {
-                // Get the protocol for the current update value
-                std::vector<int> prot = protocols[u.values[v]];
-                // Are any of the values below the current value in the update in the protocol?
-                for (int c = 0; c < v; c++) 
-                    if (std::find(prot.begin(), prot.end(), u.values[c]) != prot.end()) {
-                        //Move values[v] to index c
-                        MoveElement(u.values, v, c);
-                        fixed = false;
-                    }
+            bool fixed = false;
+            while (!fixed)
+            {
+                fixed = true;
+                // Iterate through each number in the update values
+                for (int v = 0; v < u.values.size(); v++) {
+                    // Get the protocol for the current update value
+                    std::vector<int> prot = protocols[u.values[v]];
+                    // Are any of the values below the current value in the update in the protocol?
+                    for (int c = 0; c < v; c++)
+                        if (std::find(prot.begin(), prot.end(), u.values[c]) != prot.end()) {
+                            //Move values[v] to index c
+                            MoveElement(u.values, v, c);
+                            fixed = false;
+                        }
                 }
+            }
         }
     }
     int sum = 0;
+
     for (Update i : updates) {
         sum += i.isValid ? 0 : i.values[i.values.size() / 2];
     }
     std::cout << "Part 2: " << sum << std::endl;
+
 }
 
