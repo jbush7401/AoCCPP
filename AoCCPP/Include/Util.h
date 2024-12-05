@@ -6,9 +6,11 @@
 std::vector<std::string> GetVectorFromTxt(const std::string& path);
 std::vector<std::vector<int>> GetVectorIntsFromTxt(const std::string& path);
 std::vector<std::vector<char>> Get2dVectorMatrixFromTxt(const std::string& path);
+char StayInIndexBounds2D(int x, int y, std::vector<std::vector<char>> &col, char failReturn = '.');
 std::string GetStringFromTxt(const std::string& path);
 std::vector<std::string> DelimitedToString(const std::string& s, char delimiter);
 std::vector<int> DelimitedToInts(const std::string& s);
+void MoveElement(std::vector<int>& vec, size_t src, size_t dst);
 
 template<typename T>
 std::vector<T> StringToInts(const std::string& s)

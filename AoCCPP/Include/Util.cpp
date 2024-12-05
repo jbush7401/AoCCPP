@@ -61,6 +61,16 @@ std::vector<std::vector<char>> Get2dVectorMatrixFromTxt(const std::string& path)
     return vec;
 }
 
+char StayInIndexBounds2D(int x, int y, std::vector<std::vector<char>>& col, char failReturn) {
+    if (x < 0 || y < 0)
+        return failReturn;
+    try {
+        return col[y][x]; 
+    }
+    catch(...) {
+        return failReturn;
+    }
+}
 
 std::string GetStringFromTxt(const std::string& path)
 {
@@ -112,7 +122,7 @@ std::vector<int> DelimitedToInts(const std::string& s)
 
     while (str < end) {
         // Skip leading whitespace
-        while (str < end && std::isspace(*str)) ++str;
+        while (str < end && (std::isspace(*str) || *str == ',')) ++str;
         if (str >= end) break;
 
         int value;
@@ -127,6 +137,16 @@ std::vector<int> DelimitedToInts(const std::string& s)
         }
     }
     return numbers;
+}
+
+void MoveElement(std::vector<int>& vec, size_t src, size_t dst)
+{
+    if (src > dst) {
+        std::rotate(vec.begin() + dst, vec.begin() + src, vec.begin() + src + 1);
+    }
+    else if (src < dst) {
+        std::rotate(vec.begin() + src, vec.begin() + src + 1, vec.begin() + dst + 1);
+    }
 }
 
 void replaceAll(std::string& str, const std::string& from, const std::string& to) {
