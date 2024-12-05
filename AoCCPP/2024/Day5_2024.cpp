@@ -5,23 +5,6 @@
 #include <iostream>
 #include <numeric>
 
-bool Day5_2024::CheckUpdateValid(Update u)
-{
-    for (const auto& pair : protocols) {
-        auto it = std::find(u.values.begin(), u.values.end(), pair.first);
-        if (it != u.values.end()) {
-            for (int i = 0; i < std::distance(u.values.begin(), it); i++) {
-                if (std::find(pair.second.begin(), pair.second.end(), u.values[i]) != pair.second.end())
-                {
-                    return false;
-                }
-            }
-        }
-    }
-    return true;
-}
-
-
 void Day5_2024::PartOne()
 {
 	//Parse Data
@@ -77,8 +60,10 @@ void Day5_2024::PartTwo()
 {
     // Iterate through the bad updates
     for (Update &u : updates) {
-        while (!u.fixed)
+        bool fixed = false;
+        while (!fixed)
         {
+            fixed = true;
             // Iterate through each number in the update values
             for (int v = 0; v < u.values.size(); v++) {
                 // Get the protocol for the current update value
@@ -88,9 +73,9 @@ void Day5_2024::PartTwo()
                     if (std::find(prot.begin(), prot.end(), u.values[c]) != prot.end()) {
                         //Move values[v] to index c
                         MoveElement(u.values, v, c);
+                        fixed = false;
                     }
                 }
-                u.fixed = CheckUpdateValid(u);
         }
     }
     int sum = 0;
