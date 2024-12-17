@@ -13,7 +13,7 @@ int main() {
     std::cin >> year >> day;
 
     if (day == 0) {
-        for(int i = 1; i <= 4; i++)
+        for(int i = 1; i <= 5; i++)
             if (auto instance = factory.CreateInstance(year, i)) {
                 DayRunner::Run(std::move(*instance));
             }

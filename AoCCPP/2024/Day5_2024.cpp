@@ -15,8 +15,7 @@ void Day5_2024::PartOne()
     {
         while (getline(myfile, line) && !line.empty())
         {
-            int n = std::stoi(line.substr(0, 2));
-            protocols[n].push_back(std::stoi(line.substr(3)));
+            protocols[std::stoi(line.substr(0, 2))].push_back(std::stoi(line.substr(3)));
         }
         while (getline(myfile, line)) {
             Update u;
@@ -58,7 +57,6 @@ void Day5_2024::PartOne()
 
 void Day5_2024::PartTwo()
 {
-    int swap = 0;
     // Iterate through the bad updates
     for (Update& u : updates) {
         if (!u.isValid)
