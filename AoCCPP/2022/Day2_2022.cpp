@@ -1,7 +1,6 @@
-#include "Day2.h"
+#include "Day2_2022.h"
 #include "Util.h"
 #include <iostream>
-#include "Day2.h"
 
 void Day2_2022::PartOne()
 {

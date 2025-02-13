@@ -1,4 +1,4 @@
-#include "Day3.h"
+#include "Day3_2022.h"
 #include "Util.h"
 #include <iostream>
 

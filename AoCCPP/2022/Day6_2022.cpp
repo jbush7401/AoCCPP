@@ -1,4 +1,4 @@
-#include "Day6.h"
+#include "Day6_2022.h"
 #include "util.h"
 #include <algorithm>
 #include <iostream>

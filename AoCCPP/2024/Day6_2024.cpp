@@ -74,7 +74,7 @@ void Day6_2024::PartOne()
         }
     }
     int totalVisited = 0;
-    for (int i = 0; i < m.map.getCols() * m.map.getRows(); i++) {
+    for (int i = 0; i < m.map.getSize(); i++) {
         if (m.map.get(i)->visited == true)
             totalVisited++;
     }
@@ -104,7 +104,7 @@ void Day6_2024::PartTwo()
     std::cout << "Part 2 : " << loops << std::endl;
 }
 
-bool Day6_2024::isInBounds(size_t x, size_t y)
+bool Day6_2024::isInBounds(const size_t &x, const size_t &y) const
 {
     if (x >= 0 && x < xLength && y >= 0 && y < yLength)
         return true;
@@ -137,7 +137,6 @@ bool Day6_2024::IsLoop(Player player)
     bool inBounds = true;
     Pos* ahead;
     while (inBounds) {
-        pastPlayers.push_back(player);
         // Check direction facing and see what is in front
         size_t x = player.currentX, y = player.currentY;
         switch (player.dirFacing) {
@@ -160,13 +159,15 @@ bool Day6_2024::IsLoop(Player player)
             if (ahead->tile == '.') {
                 player.currentX = x;
                 player.currentY = y;
-                for (Player p : pastPlayers) {
-                    if(p == player)
+            }
+            else if (ahead->tile == '#'){
+                for (const Player& p : pastPlayers) {
+                    if (p == player)
                         return true;
                 }
-            }
-            else if (ahead->tile == '#')
+                pastPlayers.push_back(player);
                 turnRight(player);
+            }
         }
         else
             inBounds = false;

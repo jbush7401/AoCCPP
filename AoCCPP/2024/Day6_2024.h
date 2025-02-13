@@ -46,11 +46,11 @@ class Day6_2024 : public IDay {
 		};
 	};
 
-	bool isInBounds(size_t x, size_t y);
+	bool isInBounds(const size_t& x, const size_t& y) const;
 	Direction turnRight(Player& p);
 	Map map;
-	Player player;
-	Player playerStart;
+	Player player = Player{ Direction::N, 0, 0 };
+	Player playerStart = Player{ Direction::N, 0, 0 };
    
 	bool IsLoop(Player p);
 };
