@@ -191,6 +191,9 @@
     <ClInclude Include="2024\Day6_2024.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Collections.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="2022\Input\Day1.txt" />

@@ -214,6 +214,7 @@
     <ClInclude Include="2024\Day4_2024.h" />
     <ClInclude Include="2024\Day5_2024.h" />
     <ClInclude Include="2024\Day6_2024.h" />
+    <ClInclude Include="Include\Collections.h" />
     <ClInclude Include="Include\DayFactory.h" />
     <ClInclude Include="Include\DayRegistry.h" />
     <ClInclude Include="Include\Util.h" />

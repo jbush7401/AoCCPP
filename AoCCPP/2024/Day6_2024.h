@@ -1,40 +1,56 @@
 #pragma once
 #include "IDay.h"
-#include <vector>
+#include "Collections.h"
 
 class Day6_2024 : public IDay {
 	void PartOne();
 	void PartTwo();
 
 	enum Direction {N, E, S, W};
+	
+	public:
+		size_t xLength = 0, yLength = 0;
 
-	struct Loc {
-		int x, y;
-		Loc(int x = 0, int y = 0) {
-			this->x = x;
-			this->y = y;
-		}
-	};
 	struct Pos {
-		char obstruction;
+		char tile;
 		bool visited = false;
-		Loc location;
-		Pos(char o, bool v, Loc l) {
-			obstruction = o;
+		bool playerStart = false;
+		Pos() : tile('.'), visited(false) {}  // Set default values
+		Pos(char o, bool v, bool ps) {
+			tile = o;
 			visited = v;
-			location = l;
+			playerStart = ps;
 		}
 	};
 
 	struct Player {
 		Direction dirFacing;
-		Loc loc;
+		size_t currentX;
+		size_t currentY;
+
+		bool operator==(const Player& other) const {
+			return dirFacing == other.dirFacing &&
+				currentX == other.currentX &&
+				currentY == other.currentY;
+		}
 	};
 
 	struct Map {
-		std::vector<Pos> positions;
-		int xMax = 0;
-		int yMax = 0;
-		Map(std::vector<Pos> p, int xMax, int yMax)
+		GenArray2d<Pos> map;
+		// Default constructor
+		Map() = default;
+
+		// Use member initializer list to initialize `GenArray2d<Pos>`
+		Map(size_t xM, size_t yM)
+			: map(xM, yM) {
+		};
 	};
+
+	bool isInBounds(size_t x, size_t y);
+	Direction turnRight(Player& p);
+	Map map;
+	Player player;
+	Player playerStart;
+   
+	bool IsLoop(Player p);
 };
