@@ -1,0 +1,55 @@
+#include "DayFactory.h"
+#include "../2022/Day1_2022.h"
+#include "../2022/Day2_2022.h"
+#include "../2022/Day3_2022.h"
+#include "../2022/Day4_2022.h"
+#include "../2022/Day5_2022.h"
+#include "../2022/Day6_2022.h"
+#include "../2022/Day7_2022.h"
+#include "../2022/Day8_2022.h"
+#include "../2022/Day9_2022.h"
+#include "../2022/Day10_2022.h"
+#include "../2023/Day1_2023.h"
+#include "../2023/Day2_2023.h"
+#include "../2023/Day3_2023.h"
+#include "../2023/Day4_2023.h"
+#include "../2023/Day5_2023.h"
+#include "../2023/Day6_2023.h"
+#include "../2023/Day7_2023.h"
+#include "../2023/Day8_2023.h"
+#include "../2023/Day9_2023.h"
+#include "../2024/Day1_2024.h"
+#include "../2024/Day2_2024.h"
+#include "../2024/Day3_2024.h"
+#include "../2024/Day4_2024.h"
+#include "../2024/Day5_2024.h"
+#include "../2024/Day6_2024.h"
+
+
+void RegisterDays(DayFactory& dayFactory) {
+	dayFactory.RegisterDay<Day1_2022>(2022, 1);
+	dayFactory.RegisterDay<Day2_2022>(2022, 2);
+	dayFactory.RegisterDay<Day3_2022>(2022, 3);
+	dayFactory.RegisterDay<Day4_2022>(2022, 4);
+	dayFactory.RegisterDay<Day5_2022>(2022, 5);
+	dayFactory.RegisterDay<Day6_2022>(2022, 6);
+	dayFactory.RegisterDay<Day7_2022>(2022, 7);
+	dayFactory.RegisterDay<Day8_2022>(2022, 8);
+	dayFactory.RegisterDay<Day9_2022>(2022, 9);
+	dayFactory.RegisterDay<Day10_2022>(2022, 10);
+	dayFactory.RegisterDay<Day1_2023>(2023, 1);
+	dayFactory.RegisterDay<Day2_2023>(2023, 2);
+	dayFactory.RegisterDay<Day3_2023>(2023, 3);
+	dayFactory.RegisterDay<Day4_2023>(2023, 4);
+	dayFactory.RegisterDay<Day5_2023>(2023, 5);
+	dayFactory.RegisterDay<Day6_2023>(2023, 6);
+	dayFactory.RegisterDay<Day7_2023>(2023, 7);
+	dayFactory.RegisterDay<Day8_2023>(2023, 8);
+	dayFactory.RegisterDay<Day9_2023>(2023, 9);
+	dayFactory.RegisterDay<Day1_2024>(2024, 1);
+	dayFactory.RegisterDay<Day2_2024>(2024, 2);
+	dayFactory.RegisterDay<Day3_2024>(2024, 3);
+	dayFactory.RegisterDay<Day4_2024>(2024, 4);
+	dayFactory.RegisterDay<Day5_2024>(2024, 5);
+	dayFactory.RegisterDay<Day6_2024>(2024, 6);
+}
