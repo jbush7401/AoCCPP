@@ -1,21 +1,12 @@
 {
-    // CMake configuration
     "cmake.configureOnOpen": true,
     "cmake.buildDirectory": "${workspaceFolder}/build",
-    
-    // Set the default build type
     "cmake.buildType": "Debug",
-    
-    // Automatically configure CMake when opening the project
-    "cmake.configureOnEdit": true,
-    
-    // Show CMake output
-    "cmake.showSystemKits": false,
-    
-    // C++ IntelliSense configuration
+    "cmake.configureOnEdit": false,
+    "cmake.preferredGenerators": ["MinGW Makefiles"],
+    "cmake.generator": "MinGW Makefiles",
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
-    
-    // File associations
+    "cmake.buildTask": true,
     "files.associations": {
         "*.h": "cpp",
         "iostream": "cpp",

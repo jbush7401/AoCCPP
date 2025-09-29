@@ -2,6 +2,7 @@
 #include "IDay.h"
 #include <vector>
 #include <string>
+#include <cstdint>
 
 class Day1_2024 : public IDay {
 public:

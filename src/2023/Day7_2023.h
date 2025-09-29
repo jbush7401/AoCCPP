@@ -11,7 +11,7 @@ public:
 
     std::vector<std::string> vec;
     
-    const enum HandRank { HighCard, OnePair, TwoPair, ThreeOfAKind, FullHouse, FourOfAKind, FiveOfAKind };
+    enum HandRank { HighCard, OnePair, TwoPair, ThreeOfAKind, FullHouse, FourOfAKind, FiveOfAKind };
 
     class Hand {
     public:
