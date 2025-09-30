@@ -3,10 +3,14 @@
     "cmake.buildDirectory": "${workspaceFolder}/build",
     "cmake.buildType": "Debug",
     "cmake.configureOnEdit": false,
-    "cmake.preferredGenerators": ["MinGW Makefiles"],
-    "cmake.generator": "MinGW Makefiles",
+    "cmake.generator": "Ninja",
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "cmake.buildTask": true,
+    "C_Cpp.default.compilerPath": "C:/Program Files/LLVM/bin/clang++.exe",
+    "cmake.configureSettings": {
+        "CMAKE_C_COMPILER": "C:/Program Files/LLVM/bin/clang.exe",
+        "CMAKE_CXX_COMPILER": "C:/Program Files/LLVM/bin/clang++.exe"
+    },
     "files.associations": {
         "*.h": "cpp",
         "iostream": "cpp",
