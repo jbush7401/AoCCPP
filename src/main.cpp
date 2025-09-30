@@ -1,8 +1,8 @@
 // main.cpp
 #include <iostream>
-#include "include/DayFactory.h"
-#include "include/DayRegistry.h"
-#include "include/DayRunner.h"
+#include "DayFactory.h"
+#include "DayRegistry.h"
+#include "DayRunner.h"
 
 int main() {
     DayFactory factory;
