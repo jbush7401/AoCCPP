@@ -1,9 +1,10 @@
 #include "Day1_2024.h"
-#include "Util.h"
+#include <charconv>
 #include <fstream>
 #include <algorithm>
 #include <iostream>
 #include <cmath>
+#include <string>
 
 void Day1_2024::PartOne()
 {
@@ -13,10 +14,13 @@ void Day1_2024::PartOne()
     {
         while (getline(myfile, line))
         {
-            size_t pos = 0;
-            while (pos < line.size() && line[pos] != ' ') pos++;
-            list1.push_back(std::stoi(line.substr(0, pos)));
-            list2.push_back(std::stoi(line.substr(pos+1)));
+            const char* start = line.data();
+            const char* end = line.data() + line.size();
+            int num1, num2;
+            auto [ptr1, ec1] = std::from_chars(start, end, num1);
+            auto [ptr2, ec2] = std::from_chars(ptr1 + 3, end, num2);
+            list1.push_back(num1);
+            list2.push_back(num2);
         }
         myfile.close();
     }

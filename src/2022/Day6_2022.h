@@ -1,6 +1,5 @@
 #pragma once
 #include "IDay.h"
-#include <vector>
 #include <string>
 
 class Day6_2022 : public IDay {

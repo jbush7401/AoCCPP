@@ -5,6 +5,12 @@
     "cmake.configureOnEdit": false,
     "cmake.generator": "Ninja",
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.default.includePath": [
+    "${workspaceFolder}/src/Include",
+    "${workspaceFolder}/src/2022",
+    "${workspaceFolder}/src/2023",
+    "${workspaceFolder}/src/2024"
+    ],
     "cmake.buildTask": true,
     "C_Cpp.default.compilerPath": "C:/Program Files/LLVM/bin/clang++.exe",
     "cmake.configureSettings": {

@@ -1,5 +1,5 @@
 #include "Day6_2022.h"
-#include "util.h"
+#include "Util.h"
 #include <algorithm>
 #include <iostream>
 

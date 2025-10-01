@@ -24,6 +24,15 @@ file(GLOB_RECURSE SOURCES
 
 add_executable(AoCCPP ${SOURCES})
 
+# Suppress warnings from system headers
+if(MSVC OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    target_compile_options(AoCCPP PRIVATE
+        -Wno-pragma-pack
+        -Wno-unknown-pragmas
+        -Wno-pragma-system-header-outside-header
+    )
+endif()
+
 target_include_directories(AoCCPP PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src/Include"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/2022"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/2023"
