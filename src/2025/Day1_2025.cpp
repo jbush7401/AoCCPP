@@ -16,6 +16,8 @@ void Day1_2025::PartOne()
             auto [ptr1, ec1] = std::from_chars(line.data() + 1, line.data() + line.size(), length);
             passedZeroes += length / 100;
             length = length % 100;
+            if(direction == 'L')
+                length *= -1;
             dial = getDial();
             if (dial == 0){
                 totalZeroes++;
@@ -33,26 +35,16 @@ void Day1_2025::PartTwo()
 
 int Day1_2025::getDial()
 {
-    int temp = dial;
-    if (direction == 'L')
-    {
-        temp =  dial - length;
-        if (temp < 0){
-            if(dial != 0)
-                passedZeroes++;
-            return 100 - abs(temp % 100);
-        }
-        else 
-            return temp;
+    int temp = dial + length;
+    if (temp < 0){
+        if(dial != 0)
+            passedZeroes++;
+        return 100 - abs(temp % 100);
     }
-    else
-    {
-        temp = dial + length;
-        if (temp > 100)
-            if (dial != 0)
-                passedZeroes++;
-        return temp % 100;
-    }
+    if (temp > 100)
+        if (dial != 0)
+            passedZeroes++;
+    return temp % 100;
 
-    return 0;
+    return temp;
 }
