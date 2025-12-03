@@ -37,6 +37,7 @@ target_include_directories(AoCCPP PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src/Inclu
     "${CMAKE_CURRENT_SOURCE_DIR}/src/2022"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/2023"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/2024"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/2025"
 )
 
 #  Copy input files to build directory
@@ -50,4 +51,7 @@ add_custom_command(TARGET AoCCPP POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
     ${CMAKE_CURRENT_SOURCE_DIR}/src/2024/Input
     ${CMAKE_CURRENT_BINARY_DIR}/2024/Input
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/2025/Input
+    ${CMAKE_CURRENT_BINARY_DIR}/2025/Input
 )

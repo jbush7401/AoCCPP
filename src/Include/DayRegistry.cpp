@@ -24,6 +24,7 @@
 #include "../2024/Day4_2024.h"
 #include "../2024/Day5_2024.h"
 #include "../2024/Day6_2024.h"
+#include "../2025/Day1_2025.h"
 
 
 void RegisterDays(DayFactory& dayFactory) {
@@ -52,4 +53,5 @@ void RegisterDays(DayFactory& dayFactory) {
 	dayFactory.RegisterDay<Day4_2024>(2024, 4);
 	dayFactory.RegisterDay<Day5_2024>(2024, 5);
 	dayFactory.RegisterDay<Day6_2024>(2024, 6);
+	dayFactory.RegisterDay<Day1_2025>(2025, 1);
 }

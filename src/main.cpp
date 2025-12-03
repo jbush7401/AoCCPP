@@ -9,7 +9,7 @@ int main() {
     RegisterDays(factory);
 
     int year, day;
-    std::cout << "Enter the Year and Day of the Problem (IE 2022 1): ";
+    std::cout << "Enter the Year and Day of the Problem (IE 2025 1): ";
     std::cin >> year >> day;
 
     if (day == 0) {
