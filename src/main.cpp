@@ -19,6 +19,13 @@ int main() {
             }
     }
     else{
+         // Warm-up runs
+        for (int i = 0; i < 3; ++i) {
+            if (auto warmup = factory.CreateInstance(year, day)) {
+                warmup->PartOne();
+                warmup->PartTwo();
+            }
+        }
         if (auto instance = factory.CreateInstance(year, day)) {
             DayRunner::Run(std::move(*instance));
 	    }
